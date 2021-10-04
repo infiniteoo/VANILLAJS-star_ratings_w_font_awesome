@@ -27,3 +27,18 @@ productSelect.addEventListener("change", (e) => {
   ratingControl.disabled = false;
   ratingControl.value = ratings[product];
 });
+
+ratingControl.addEventListener("blur", (e) => {
+  const rating = e.target.value;
+
+  // make sure 5 or under
+  if (rating > 5) {
+    alert("Please rate 1 - 5");
+    return;
+  }
+
+  // change rating
+  ratings[product] = rating;
+
+  getRatings();
+});
