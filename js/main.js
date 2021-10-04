@@ -42,3 +42,22 @@ ratingControl.addEventListener("blur", (e) => {
 
   getRatings();
 });
+
+// get ratings
+function getRatings() {
+  for (let rating in ratings) {
+    // get percentage
+    const starPercentage = (ratings[rating] / starsTotal) * 100;
+
+    // round to nearest 10
+    const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
+    // set width of stars-inner to percentage
+    document.querySelector(`.${rating} .stars-inner`).style.width =
+      starPercentageRounded;
+
+    // add number rating
+    document.querySelector(`.${rating} .number-rating`).innerHTML =
+      ratings[rating];
+  }
+}
