@@ -9,3 +9,7 @@ const ratings = {
 
 // total stars
 const starsTotal = 5;
+
+// run getRatings when DOM loads
+document.addEventListener("DOMContentLoaded", getRatings);
+
