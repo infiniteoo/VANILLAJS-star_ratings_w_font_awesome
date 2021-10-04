@@ -16,3 +16,14 @@ document.addEventListener("DOMContentLoaded", getRatings);
 // form elements
 const productSelect = document.getElementById("product-select");
 const ratingControl = document.getElementById("rating-control");
+
+// init product
+let product;
+
+// product select change
+productSelect.addEventListener("change", (e) => {
+  product = e.target.value;
+  // enable rating control
+  ratingControl.disabled = false;
+  ratingControl.value = ratings[product];
+});
