@@ -13,3 +13,6 @@ const starsTotal = 5;
 // run getRatings when DOM loads
 document.addEventListener("DOMContentLoaded", getRatings);
 
+// form elements
+const productSelect = document.getElementById("product-select");
+const ratingControl = document.getElementById("rating-control");
